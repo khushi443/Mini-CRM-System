@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>CRM</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="records.html">Records</a>
+  <a href="kanban.html">Kanban</a>
+  <a href="actions.html" class="active">Actions</a>
+  <a href="app.html">App Description</a>
+  <a href="ai.html">AI Insights</a>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay"></div>
+
+<!-- MAIN -->
+<div class="main">
+  <!-- TOPBAR -->
+  <div class="actions-topbar">
+
+    <div class="top-left">
+      <h2>Project Name</h2>
+      <input type="text" placeholder="Enter project description...">
+    </div>
+
+    <div class="top-controls">
+
+     <!-- FILTER -->
+<button class="icon-btn filter-btn"
+        onclick="toggleFilter()">
+  ☰
+</button>
+
+<!-- COLUMN -->
+<button class="icon-btn column-btn"
+        onclick="toggleColumns()">
+  ☷
+</button>
+      <div class="grid-dropdown-wrapper">
+
+  <div class="grid-dropdown-selected"
+       onclick="toggleGridMenu()">
+
+    <span id="gridSelected">
+      Grid: Days
+    </span>
+
+    <span>⌄</span>
+
+  </div>
+
+  <div class="grid-dropdown-menu"
+       id="gridMenu">
+
+    <div onclick="changeGrid('Days',30)">
+      Days
+    </div>
+
+    <div onclick="changeGrid('Weeks',84)">
+      Weeks
+    </div>
+
+    <div onclick="changeGrid('Months',365)">
+      Months
+    </div>
+
+    <div onclick="changeGrid('Years',3650)">
+      Years
+    </div>
+
+  </div>
+
+</div>
+
+      <button class="view-btn active"
+        id="ganttBtn"
+        onclick="showGanttView()">
+  Gantt
+</button>
+
+<button class="view-btn"
+        id="tableBtn"
+        onclick="showTableView()">
+  Table
+</button>
+
+      <button class="icon-btn">⤢</button>
+    </div>
+
+  </div>
+
+  <!-- TASK UI -->
+<div class="task-container two-column"
+     id="actionsLayout">
+  <!-- LEFT -->
+  <div class="task-list">
+
+    <div class="task-header">
+      <div>TASKS 4/4</div>
+      <div>PERIOD</div>
+      <div>USERS</div>
+      <div>COMP</div>
+      <div>STATUS</div>
+    </div>
+
+    <div id="taskData"></div>
+
+    <div class="new-task-btn"
+     onclick="addNewTask()">
+  + NEW TASK
+</div>
+
+  </div>
+
+  <!-- RIGHT TIMELINE -->
+  <div class="timeline-section timeline">
+
+    <div id="timelineHeader" class="timeline-header">
+
+      <div>Fri<br><span>01</span></div>
+      <div>Sat<br><span>02</span></div>
+      <div>Sun<br><span>03</span></div>
+      <div>Mon<br><span>04</span></div>
+      <div>Tue<br><span>05</span></div>
+      <div>Wed<br><span>06</span></div>
+
+      <div class="active-day">
+        <div class="month-label">May 2026</div>
+        Fri
+        <span>08</span>
+      </div>
+
+      <div>Sat<br><span>09</span></div>
+      <div>Sun<br><span>10</span></div>
+
+    </div>
+
+    <div id="timelineBody" class="timeline-body">
+
+      <div class="timeline-row">
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell active"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell active"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell active"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell active"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+        <div class="timeline-cell"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =========================
+     TABLE VIEW
+========================= -->
+
+<div class="table-view" id="tableView">
+
+  <table>
+
+    <thead>
+
+      <tr>
+
+        <th>TASK NAME</th>
+        <th>NOTE</th>
+        <th>START DATE</th>
+        <th>END DATE</th>
+        <th>USERS</th>
+        <th>COMPLETE</th>
+        <th>STATUS</th>
+        <th>PRIORITY</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody id="tableTaskBody">
+
+    </tbody>
+
+  </table>
+
+  <div class="table-new-task">
+    ⊕ NEW TASK
+  </div>
+
+</div>
+<!-- FILTER PANEL -->
+<div id="filterPanel" class="modal">
+
+  <div class="filter-modal">
+
+    <!-- HEADER -->
+    <div class="filter-header">
+      <h2>Filter</h2>
+      <span onclick="toggleFilter()">✕</span>
+    </div>
+
+   <!-- BODY -->
+<div class="filter-body">
+
+<div class="filter-section">
+  <h4>📅 Date</h4>
+
+  <p class="show-label">Show tasks</p>
+
+  <div class="custom-dropdown">
+
+  <div class="dropdown-selected">
+
+    <span class="selected-text">
+      Select date or date range
+    </span>
+
+    <span class="arrow">▼</span>
+
+  </div>
+
+  <div class="dropdown-menu">
+
+    <div class="dropdown-heading">DUE</div>
+
+    <div class="dropdown-item">Overdue</div>
+    <div class="dropdown-item">Due today</div>
+    <div class="dropdown-item">Due within this week</div>
+    <div class="dropdown-item">Due within this month</div>
+
+    <div class="dropdown-heading">STARTING</div>
+
+    <div class="dropdown-item">Starting today</div>
+    <div class="dropdown-item">Starting within this week</div>
+    <div class="dropdown-item">Starting within this month</div>
+
+  </div>
+
+</div>
+      <!-- STATUS -->
+      <div class="filter-section">
+        <h4>◉ Status</h4>
+      <div class="status-options">
+      <label class="status-chip">
+      <input type="checkbox">
+      <span class="mini-chip blue-chip">To do</span>
+      </label>
+  <label class="status-chip">
+    <input type="checkbox">
+    <span class="mini-chip yellow-chip">In progress</span>
+  </label>
+  <label class="status-chip">
+    <input type="checkbox">
+    <span class="mini-chip green-chip">Done</span>
+  </label>
+</div>
+</div>
+      <!-- PRIORITY -->
+      <div class="filter-section">
+
+        <h4>📊 Priority</h4>
+
+      <div class="priority-group">
+
+          <label>
+            <input type="checkbox">
+            📶 Critical
+          </label>
+
+          <label>
+            <input type="checkbox">
+            📶 High
+          </label>
+
+          <label>
+            <input type="checkbox">
+            📶 Medium
+          </label>
+
+          <label>
+            <input type="checkbox">
+            📶 Low
+          </label>
+
+        </div>
+
+      </div>
+
+      <!-- COMPLETION -->
+<!-- COMPLETION -->
+<div class="filter-section">
+
+  <h4>📈 Completion</h4>
+
+  <p>Task completion</p>
+
+  <div class="completion-row">
+
+    <!-- DROPDOWN -->
+    <div class="custom-dropdown small-dropdown">
+      <div class="dropdown-selected">
+        <span class="selected-text">
+          Select predicate
+        </span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="dropdown-menu">
+        <div class="dropdown-item">
+          Greater than
+        </div>
+        <div class="dropdown-item">
+          Less than
+        </div>
+        <div class="dropdown-item">
+          Is equal to
+        </div>
+        <div class="dropdown-item">
+          Is not equal to
+        </div>
+        <div class="dropdown-item">
+          Is between
+        </div>
+      </div>
+    </div>
+
+    <!-- INPUT -->
+    <input type="text" placeholder="%">
+
+  </div>
+ </div>
+</div>
+    <!-- FOOTER -->
+    <div class="filter-footer">
+      <button class="clear-btn">
+        CLEAR
+      </button>
+      <div class="footer-right">
+
+        <button class="clear-btn" onclick="toggleFilter()">
+          CANCEL
+        </button>
+
+        <button class="apply-btn">
+          APPLY
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- COLUMN PANEL -->
+<div id="columnPanel" class="modal">
+
+  <div class="column-modal">
+
+    <!-- HEADER -->
+    <div class="column-header">
+      <h2>Column Setup</h2>
+      <span onclick="toggleColumns()">✕</span>
+    </div>
+
+    <!-- TABLE HEADER -->
+    <div class="column-table-head">
+      <div>COLUMN</div>
+
+      <div>
+        GANTT VIEW
+        <span class="sub-text">
+          Max 4 visible columns
+        </span>
+      </div>
+
+      <div>TYPE</div>
+    </div>
+
+    <!-- BODY -->
+    <div class="column-body">
+
+      <div class="col-row disabled-row">
+        <div>Task name</div>
+        <div></div>
+        <div>Plain Text</div>
+      </div>
+
+      <div class="col-row">
+        <div>Period</div>
+        <div class="link">HIDE</div>
+        <div>Date Picker</div>
+      </div>
+
+      <div class="col-row">
+        <div>Users</div>
+        <div class="link">HIDE</div>
+        <div>User Picker</div>
+      </div>
+
+      <div class="col-row">
+        <div>Completion</div>
+        <div class="link">HIDE</div>
+        <div>Percent</div>
+      </div>
+
+      <div class="col-row">
+        <div>Status</div>
+        <div class="link">HIDE</div>
+        <div>Dropdown</div>
+      </div>
+
+      <div class="col-row">
+        <div>Priority</div>
+        <div class="unhide-link">
+          UNHIDE
+        </div>
+        <div>Dropdown</div>
+      </div>
+
+    </div>
+   
+
+    <!-- FOOTER -->
+   <div class="new-column-wrap">
+
+  <button class="new-column-btn"
+        onclick="showNewColumnRow()">
+  ⊕ NEW COLUMN
+</button>
+
+</div>
+
+<div class="column-footer">
+  <button onclick="toggleColumns()">
+    CLOSE
+  </button>
+</div>
+
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="js/utils.js"></script>
+<script src="js/actions.js"></script>
+
+</body>
+</html>

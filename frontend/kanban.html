@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kanban</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>CRM</h2>
+ <a href="dashboard.html">Dashboard</a>
+  <a href="records.html">Records</a>
+  <a href="kanban.html" class="active">Kanban</a>
+  <a href="actions.html" >Actions</a>
+  <a href="app.html">App Description</a>
+  <a href="ai.html">AI Insights</a>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <h2>Sales Deal Tracker</h2>
+  </div>
+
+  <div class="pipeline">
+
+  <div class="column" id="NEW" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h3>NEW</h3>
+  </div>
+
+  <div class="column" id="QUALIFIED" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h3>QUALIFIED</h3>
+  </div>
+
+  <div class="column" id="PROPOSAL" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h3>PROPOSAL</h3>
+  </div>
+
+  <div class="column" id="NEGOTIATION" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h3>NEGOTIATION</h3>
+  </div>
+
+  <div class="column" id="CLOSED" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h3>CLOSED</h3>
+  </div>
+
+  <div class="column" id="ON_HOLD" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h3>ON HOLD</h3>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

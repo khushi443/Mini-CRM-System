@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="login-container">
+  <div class="login-box">
+    <h2>Create Account ✨</h2>
+    <p>Register to use CRM</p>
+
+    <!-- ✅ FORM ADDED -->
+    <form onsubmit="event.preventDefault(); register();">
+
+      <input type="text" id="name" placeholder="Enter Name" required>
+      <input type="email" id="email" placeholder="Enter Email" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+
+      <!-- ✅ BUTTON FIX -->
+      <button type="submit">Register</button>
+
+    </form>
+
+    <p style="margin-top:10px;">
+      Already have account?
+      <a href="index.html">Login</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>CRM</h2>
+<a href="dashboard.html">Dashboard</a>
+  <a href="records.html">Records</a>
+  <a href="kanban.html">Kanban</a>
+  <a href="actions.html">Actions</a>
+  <a href="app.html">App Description</a>
+  <a href="ai.html">AI Insights</a>
+</div>
+
+<div class="main">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <h2>Sales Pipeline Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- 🔥 NEW STATS GRID -->
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h4>Total Pipeline Value</h4>
+      <p>$0</p>
+    </div>
+
+    <div class="stat-card">
+      <h4>Win Rate</h4>
+      <p>0%</p>
+    </div>
+
+    <div class="stat-card">
+      <h4>Average Deal Size</h4>
+      <p>$0</p>
+    </div>
+
+    <div class="stat-card">
+      <h4>Avg. Sales Cycle</h4>
+      <p>0 Days</p>
+    </div>
+
+    <div class="stat-card">
+      <h4>Total Leads</h4>
+      <p id="statLeads">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h4>Qualified Leads</h4>
+      <p id="statQualified">0</p>
+    </div>
+
+  </div>
+
+  <!-- 🔥 CHART SECTION -->
+  <div class="charts">
+
+  <div class="chart-box">
+    <h3>Pipeline Value by Phase</h3>
+    <canvas id="pipelineChart"></canvas>
+  </div>
+
+  <div class="chart-box">
+    <h3>New Deals Over Time</h3>
+    <canvas id="dealChart"></canvas>
+  </div>
+
+</div>
+
+  <!-- ✅ OPTIONAL: table नीचे रख रहे हैं -->
+  <div class="table-box">
+    <h3>All Leads</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tableData"></tbody>
+    </table>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>

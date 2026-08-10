@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Insights</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+
+    <h2>CRM</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="records.html">Records</a>
+  <a href="kanban.html">Kanban</a>
+  <a href="actions.html">Actions</a>
+  <a href="app.html">App Description</a>
+  <a href="ai.html"class="active">AI Insights</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="ai-container">
+
+      <!-- HEADER -->
+      <div class="ai-header">
+        AI Insights
+      </div>
+
+      <!-- BOX -->
+      <div class="ai-box">
+
+        <div class="ai-top">
+
+          <label>Prompt:</label>
+
+          <button class="logout-btn"
+                  onclick="logout()">
+            Logout
+          </button>
+
+        </div>
+
+        <!-- INPUT -->
+        <div class="ai-input-row">
+
+          <input
+            type="text"
+            id="aiInput"
+            placeholder="Ask anything about CRM...">
+
+          <button
+            class="ai-btn"
+            onclick="generateInsight()">
+
+            ✨ Ask PraxieAI
+
+          </button>
+
+        </div>
+
+        <!-- RESULT -->
+        <div id="aiResult"
+             class="ai-result">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/ai.js"></script>
+
+</body>
+</html>

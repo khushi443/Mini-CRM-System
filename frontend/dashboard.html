@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>CRM</h2>
+  <a href="dashboard.html" class="active">Dashboard</a>
+  <a href="records.html">Records</a>
+  <a href="kanban.html">Kanban</a>
+  <a href="actions.html" class="active">Actions</a>
+  <a href="app.html">App Description</a>
+  <a href="ai.html">AI Insights</a>
+</div>
+
+  <div class="main">
+
+  <div class="topbar">
+    <h2 class="title">
+      Sales Pipeline Dashboard
+    </h2>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+
+  <div class="stat-card">
+    <div class="card-header">
+      <h4>Total Pipeline Value</h4>
+      <span class="card-icon">$</span>
+    </div>
+    <p id="statValue">$0</p>
+  </div>
+
+  <div class="stat-card">
+   <div class="card-header">
+      <h4>Win Rate</h4>
+      <span class="card-icon">🏆</span>
+    </div>
+    <p id="statWin">0%</p>
+  </div>
+<div class="stat-card">
+  <div class="card-header">
+      <h4>Average Deal Size</h4>
+      <span class="card-icon">↗</span>
+    </div>
+    <p id="statAvg">$0</p>
+  </div>
+
+  <div class="stat-card">
+    <div class="card-header">
+      <h4>Avg. Sales Cycle</h4>
+      <span class="card-icon">🕒</span>
+    </div>
+    <p id="statCycle">0 Days</p>
+  </div>
+
+  <div class="stat-card">
+    <div class="card-header">
+      <h4>Total Leads</h4>
+      <span class="card-icon">📦</span>
+    </div>
+    <p id="statLeads">0</p>
+  </div>
+
+  <div class="stat-card">
+    <div class="card-header">
+      <h4>Qualified Leads</h4>
+      <span class="card-icon">⚲</span>
+    </div>
+    <p id="statQualified">0%</p>
+  </div>
+
+</div>
+
+  <!-- CHARTS -->
+  <div class="charts">
+
+   <div class="chart-box">
+
+   <h3>Pipeline Value by Phase</h3>
+
+   <canvas id="pipelineChart"></canvas>
+
+</div>
+
+<div class="chart-box">
+
+   <h3>New Deals Over Time</h3>
+
+   <canvas id="dealsChart"></canvas>
+
+</div>
+
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-box">
+    <h3>All Leads</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="tableData"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/leads.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
