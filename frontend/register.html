@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini CRM | Create Account</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="auth-shell">
+
+    <section class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-grid"></div>
+      <div class="auth-orb auth-orb-1"></div>
+      <div class="auth-orb auth-orb-2"></div>
+
+      <div class="auth-brand">
+        <div class="auth-logo">CRM</div>
+        <span class="auth-brand-name">Mini CRM</span>
+      </div>
+
+      <h1 class="auth-headline">Start closing<br><span>smarter, today.</span></h1>
+      <p class="auth-desc">
+        Create your workspace in seconds and bring your leads, tasks and
+        follow-ups into one place.
+      </p>
+
+      <div class="auth-float-cards">
+        <div class="auth-float-card auth-fc-1">
+          <div class="fc-label">Pipeline</div>
+          <div class="fc-value">Live</div>
+          <div class="fc-trend">Real-time sync</div>
+        </div>
+        <div class="auth-float-card auth-fc-2">
+          <div class="fc-label">Team</div>
+          <div class="fc-value">You</div>
+          <div class="fc-trend">Getting started</div>
+        </div>
+        <div class="auth-float-card auth-fc-3">
+          <div class="fc-label">Setup</div>
+          <div class="fc-value">2 min</div>
+          <div class="fc-trend">To your first lead</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-card-logo">
+          <div class="auth-logo">CRM</div>
+          <span class="auth-brand-name">Mini CRM</span>
+        </div>
+
+        <h1>Create account</h1>
+        <p class="auth-sub">Start managing your sales pipeline</p>
+
+        <form id="registerForm" novalidate>
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" required>
+            <div class="field-error" id="nameError" role="alert"></div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+            <div class="field-error" id="emailError" role="alert"></div>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="new-password" required>
+              <button type="button" class="field-toggle" id="togglePassword" aria-label="Show password">Show</button>
+            </div>
+            <div class="strength-meter" id="strengthMeter">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="strength-label" id="strengthLabel">At least 8 characters, 1 uppercase, 1 number, 1 special character</div>
+            <div class="field-error" id="passwordError" role="alert"></div>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••" autocomplete="new-password" required>
+            <div class="field-error" id="confirmPasswordError" role="alert"></div>
+          </div>
+
+          <label class="checkbox-row" style="margin-bottom: 22px;">
+            <input type="checkbox" id="agreeTerms">
+            I agree to the Terms &amp; Privacy Policy
+          </label>
+          <div class="field-error" id="termsError" role="alert" style="margin-top:-14px; margin-bottom: 14px;"></div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="registerSubmit">
+            <span id="registerSubmitLabel">Create Account</span>
+          </button>
+        </form>
+
+        <p class="auth-bottom">
+          Already have an account? <a href="index.html">Sign in</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

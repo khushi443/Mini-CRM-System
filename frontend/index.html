@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini CRM | Sign In</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="auth-shell">
+
+    <!-- LEFT: brand / 3D visual -->
+    <section class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-grid"></div>
+      <div class="auth-orb auth-orb-1"></div>
+      <div class="auth-orb auth-orb-2"></div>
+
+      <div class="auth-brand">
+        <div class="auth-logo">CRM</div>
+        <span class="auth-brand-name">Mini CRM</span>
+      </div>
+
+      <h1 class="auth-headline">Manage your sales.<br><span>Close more deals.</span></h1>
+      <p class="auth-desc">
+        Track leads, run your pipeline, and stay on top of every follow-up —
+        all in one workspace built for small sales teams.
+      </p>
+
+      <div class="auth-float-cards">
+        <div class="auth-float-card auth-fc-1">
+          <div class="fc-label">Leads</div>
+          <div class="fc-value">128</div>
+          <div class="fc-trend">Pipeline</div>
+        </div>
+        <div class="auth-float-card auth-fc-2">
+          <div class="fc-label">Tasks</div>
+          <div class="fc-value">14</div>
+          <div class="fc-trend">Due this week</div>
+        </div>
+        <div class="auth-float-card auth-fc-3">
+          <div class="fc-label">Follow-ups</div>
+          <div class="fc-value">6</div>
+          <div class="fc-trend">Upcoming</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: login card -->
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-card-logo">
+          <div class="auth-logo">CRM</div>
+          <span class="auth-brand-name">Mini CRM</span>
+        </div>
+
+        <h1>Welcome back</h1>
+        <p class="auth-sub">Sign in to continue to your workspace</p>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+            <div class="field-error" id="emailError" role="alert"></div>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+              <button type="button" class="field-toggle" id="togglePassword" aria-label="Show password">Show</button>
+            </div>
+            <div class="field-error" id="passwordError" role="alert"></div>
+          </div>
+
+          <div class="auth-forgot">
+            <a href="#" tabindex="-1" aria-disabled="true">Forgot password?</a>
+          </div>
+
+          <label class="checkbox-row" style="margin-bottom: 20px;">
+            <input type="checkbox" id="rememberMe">
+            Remember me
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-block" id="loginSubmit">
+            <span id="loginSubmitLabel">Sign In</span>
+          </button>
+        </form>
+
+        <p class="auth-bottom">
+          Don't have an account? <a href="register.html">Create account</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
