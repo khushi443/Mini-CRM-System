@@ -5,24 +5,24 @@ export declare class TasksService {
     private prisma;
     constructor(prisma: PrismaService);
     createTask(userId: number, data: CreateTaskDto): Promise<{
-        id: number;
         createdAt: Date;
+        id: number;
         status: string;
         userId: number;
         title: string;
         dueDate: Date | null;
     }>;
     getTasks(userId: number): Promise<{
-        id: number;
         createdAt: Date;
+        id: number;
         status: string;
         userId: number;
         title: string;
         dueDate: Date | null;
     }[]>;
     updateTask(id: number, userId: number, data: UpdateTaskDto): Promise<{
-        id: number;
         createdAt: Date;
+        id: number;
         status: string;
         userId: number;
         title: string;

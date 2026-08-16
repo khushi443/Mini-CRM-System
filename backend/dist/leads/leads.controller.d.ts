@@ -4,52 +4,52 @@ export declare class LeadsController {
     private leadsService;
     constructor(leadsService: LeadsService);
     getAllLeads(req: any, status?: string): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
     }[]>;
     getAllLeadsAdmin(): Promise<({
         user: {
-            id: number;
-            email: string;
             name: string;
+            email: string;
+            id: number;
         };
     } & {
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
     })[]>;
     getLead(id: string, req: any): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
     }>;
     createLead(body: CreateLeadDto, req: any): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
     }>;
     updateLead(id: string, body: Partial<CreateLeadDto>, req: any): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;

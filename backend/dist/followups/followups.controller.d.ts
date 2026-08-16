@@ -12,10 +12,10 @@ export declare class FollowupsController {
     }[]>;
     getUpcoming(req: any): Promise<({
         lead: {
-            id: number;
-            email: string;
             name: string;
+            email: string;
             createdAt: Date;
+            id: number;
             phone: string;
             status: string;
             userId: number;

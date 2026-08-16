@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Records</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>CRM</h2>
+ <a href="dashboard.html">Dashboard</a>
+  <a href="records.html" class="active">Records</a>
+  <a href="kanban.html">Kanban</a>
+  <a href="actions.html">Actions</a>
+  <a href="app.html">App Description</a>
+  <a href="ai.html">AI Insights</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- HEADER -->
+  <div class="header-bar">
+    Sales Deal Tracker
+  </div>
+
+  <!-- SECTION -->
+  <div class="records-container">
+    <!-- TOP -->
+<div class="records-top">
+
+  <div class="left-title">
+    <span class="icon">📊</span>
+    <h3>All Deals</h3>
+  </div>
+
+  <div class="right-controls">
+
+    <button class="create-btn"
+            onclick="openDealForm()">
+      + Create New Deal
+    </button>
+
+    <select onchange="filterStatus(this.value)">
+      <option value="ALL">All Phases</option>
+      <option value="NEW">New</option>
+      <option value="CONTACTED">Contacted</option>
+      <option value="QUALIFIED">Qualified</option>
+      <option value="LOST">Lost</option>
+    </select>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     TABLE VIEW
+========================= -->
+
+<div id="dealTableView">
+
+  <div class="table-wrapper">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Deal Name ↕</th>
+          <th>Company ↕</th>
+          <th>Contact ↕</th>
+          <th>Email ↕</th>
+          <th>Phase ↕</th>
+          <th>Value ↕</th>
+          <th>Win % ↕</th>
+          <th>Lead Source ↕</th>
+          <th>Budget ↕</th>
+          <th>Sales Rep ↕</th>
+          <th>Last Contact ↕</th>
+          <th>Next Action ↕</th>
+          <th>Close Date ↕</th>
+          <th>Actions ↕</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="tableData">
+
+      </tbody>
+
+    </table>
+
+    <div class="empty-state">
+      No deals found for the selected phase.
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     DEAL FORM
+========================= -->
+<div class="deal-form-page" id="dealFormPage">
+
+  <!-- TOP BLUE HEADER -->
+  <div class="record-header">
+    Sales Deal Record
+  </div>
+
+  <!-- BADGES -->
+  <div class="record-badges">
+
+    <div class="badge gray">
+      Phase: Lead
+    </div>
+
+    <div class="badge red">
+      Win Prob: 10%
+    </div>
+
+    <div class="badge orange">
+      Budget: Pending
+    </div>
+
+  </div>
+
+  <!-- TOP ACTION -->
+  <div class="deal-form-header">
+
+    <div></div>
+
+    <button class="save-btn">
+      Save Record
+    </button>
+
+  </div>
+
+  <!-- DEAL INFO -->
+  <div class="record-section">
+
+    <h2>Deal Information</h2>
+
+    <div class="record-grid">
+
+      <div class="field-group">
+        <label>Deal Name</label>
+        <input type="text">
+      </div>
+
+      <div class="field-group">
+        <label>Company Name</label>
+        <input type="text">
+      </div>
+
+      <div class="field-group">
+        <label>Deal Value ($)</label>
+        <input type="number">
+      </div>
+
+      <div class="field-group">
+        <label>Product Category</label>
+        <input type="text">
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+  <div class="record-section">
+
+    <h2>Contact Details</h2>
+
+    <div class="record-grid">
+
+      <div class="field-group">
+        <label>Contact Name</label>
+        <input type="text">
+      </div>
+
+      <div class="field-group">
+        <label>Contact Email</label>
+        <input type="email">
+      </div>
+
+      <div class="field-group">
+        <label>Contact Phone</label>
+        <input type="text">
+      </div>
+
+      <div class="field-group">
+        <label>Decision Maker</label>
+        <input type="text">
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- PHASE -->
+  <div class="record-section">
+
+    <h2>Phase & Status</h2>
+
+    <div class="record-grid">
+
+      <div class="field-group">
+        <label>Current Phase</label>
+
+        <select>
+          <option>Lead</option>
+          <option>Qualified</option>
+          <option>Closed</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Win Probability</label>
+
+        <select>
+          <option>10%</option>
+          <option>25%</option>
+          <option>50%</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Expected Close</label>
+        <input type="date">
+      </div>
+
+    </div>
+
+  </div>
+  <div class="record-section">
+
+  <h2>Lead & Competition</h2>
+
+  <div class="record-grid">
+
+    <div class="field-group">
+      <label>Lead Source</label>
+
+      <select>
+        <option>Website</option>
+        <option>LinkedIn</option>
+        <option>Referral</option>
+      </select>
+    </div>
+
+    <div class="field-group">
+      <label>Competitor</label>
+      <input type="text">
+    </div>
+
+    <div class="field-group">
+      <label>Budget Confirmed</label>
+
+      <select>
+        <option>Pending</option>
+        <option>Confirmed</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+<div class="record-section">
+
+  <h2>Timeline</h2>
+
+  <div class="record-grid">
+
+    <div class="field-group">
+      <label>Created Date</label>
+      <input type="date">
+    </div>
+
+    <div class="field-group">
+      <label>Last Contact</label>
+      <input type="date">
+    </div>
+
+    <div class="field-group">
+      <label>Next Action</label>
+      <input type="text">
+    </div>
+
+    <div class="field-group">
+      <label>Next Action Due</label>
+      <input type="date">
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- NOTES -->
+  <div class="record-section">
+
+    <h2>Notes</h2>
+
+    <div class="field-group">
+      <textarea placeholder="Enter notes..."></textarea>
+    </div>
+
+  </div>
+
+  <!-- FILE -->
+  <div class="record-section">
+
+    <h2>File Manager</h2>
+
+    <div class="upload-area">
+
+      <button class="save-btn">
+        Add Files
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="leadModal" class="modal">
+  <div class="modal-box">
+    <h3>Create Lead</h3>
+
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <input id="phone" placeholder="Phone">
+
+    <button onclick="createLead()">Save</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script src="js/record.js"></script>
+</body>
+</html>

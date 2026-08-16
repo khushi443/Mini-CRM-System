@@ -4,14 +4,14 @@ export declare class NotesService {
     constructor(prisma: PrismaService);
     private assertLeadOwnership;
     create(userId: number, leadId: number, content: string): Promise<{
-        id: number;
         createdAt: Date;
+        id: number;
         content: string;
         leadId: number;
     }>;
     getByLead(userId: number, leadId: number): Promise<{
-        id: number;
         createdAt: Date;
+        id: number;
         content: string;
         leadId: number;
     }[]>;

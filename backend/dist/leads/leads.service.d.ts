@@ -4,37 +4,37 @@ export declare class LeadsService {
     private prisma;
     constructor(prisma: PrismaService);
     getAllLeads(userId: number, status?: string): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
     }[]>;
     getLeadById(id: number, userId: number): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
     }>;
     createLead(userId: number, data: CreateLeadDto): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
     }>;
     updateLead(id: number, userId: number, data: Partial<CreateLeadDto>): Promise<{
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
@@ -44,15 +44,15 @@ export declare class LeadsService {
     }>;
     getAllLeadsForAdmin(): Promise<({
         user: {
-            id: number;
-            email: string;
             name: string;
+            email: string;
+            id: number;
         };
     } & {
-        id: number;
-        email: string;
         name: string;
+        email: string;
         createdAt: Date;
+        id: number;
         phone: string;
         status: string;
         userId: number;
