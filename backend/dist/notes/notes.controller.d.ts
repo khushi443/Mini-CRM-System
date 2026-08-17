@@ -4,14 +4,14 @@ export declare class NotesController {
     private service;
     constructor(service: NotesService);
     create(body: CreateNoteDto, req: any): Promise<{
-        createdAt: Date;
         id: number;
+        createdAt: Date;
         content: string;
         leadId: number;
     }>;
     get(id: string, req: any): Promise<{
-        createdAt: Date;
         id: number;
+        createdAt: Date;
         content: string;
         leadId: number;
     }[]>;

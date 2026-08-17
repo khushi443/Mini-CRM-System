@@ -5,24 +5,24 @@ export declare class TasksController {
     private tasksService;
     constructor(tasksService: TasksService);
     create(body: CreateTaskDto, req: any): Promise<{
-        createdAt: Date;
         id: number;
+        createdAt: Date;
         status: string;
         userId: number;
         title: string;
         dueDate: Date | null;
     }>;
     getAll(req: any): Promise<{
-        createdAt: Date;
         id: number;
+        createdAt: Date;
         status: string;
         userId: number;
         title: string;
         dueDate: Date | null;
     }[]>;
     update(id: string, body: UpdateTaskDto, req: any): Promise<{
-        createdAt: Date;
         id: number;
+        createdAt: Date;
         status: string;
         userId: number;
         title: string;

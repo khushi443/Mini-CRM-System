@@ -33,10 +33,10 @@ export declare class FollowupsService {
     }>;
     getUpcoming(userId: number): Promise<({
         lead: {
-            name: string;
-            email: string;
-            createdAt: Date;
             id: number;
+            email: string;
+            name: string;
+            createdAt: Date;
             phone: string;
             status: string;
             userId: number;
