@@ -353,5 +353,3 @@ If you found this project useful, please consider giving it a ⭐ on GitHub.
 🚀 Manage • Track • Convert • Grow
 
 Made with ❤️ by Khushi Singh
-
-</div> ```
