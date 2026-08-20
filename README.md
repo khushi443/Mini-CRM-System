@@ -262,3 +262,96 @@ Mini-CRM-System
 │   └── style.css
 │
 └── README.md
+
+---
+
+🔒 Security
+
+The application implements:
+
+JWT Authentication
+Password Hashing with bcrypt
+Protected API Routes
+User Ownership Validation
+User-specific Database Queries
+Server-side Validation
+Environment Variables for Secrets
+Protected CRM Resources
+🚀 Deployment
+Frontend / Application
+
+Hosted using:
+
+Render
+
+Backend
+
+NestJS REST API
+
+Database
+
+PostgreSQL
+
+Source Code
+
+GitHub
+
+Repository:
+
+https://github.com/khushi443/Mini-CRM-System
+
+Live Application:
+
+https://mini-crm-system.onrender.com
+
+🎯 Future Improvements
+Email Notifications
+Advanced CRM Analytics
+Role-based Access Control
+Team Workspaces
+CSV Import / Export
+Advanced Search & Filtering
+Activity Timeline
+Calendar Integration
+Automated Reminders
+Advanced AI-powered CRM Insights
+API Documentation with Swagger
+Automated Testing
+🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+git checkout -b feature/NewFeature
+3. Commit your changes
+git commit -m "Added new feature"
+4. Push your branch
+git push origin feature/NewFeature
+5. Open a Pull Request
+👩‍💻 Developer
+
+Khushi Singh
+
+🌐 Portfolio
+
+https://khushi443.github.io/khushi-portfolio/
+
+💼 LinkedIn
+
+https://www.linkedin.com/in/khushisingh-bca/
+
+💻 GitHub
+
+https://github.com/khushi443
+
+⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+<div align="center">
+🚀 Manage • Track • Convert • Grow
+
+Made with ❤️ by Khushi Singh
+
+</div> ```
