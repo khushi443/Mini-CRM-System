@@ -4,9 +4,13 @@
 
 ### Modern Lead & Customer Relationship Management Platform
 
-Manage leads, tasks, follow-ups, notes, and sales activities with a modern, responsive CRM workspace powered by NestJS, Prisma, and PostgreSQL.
+Manage leads, sales pipelines, tasks, follow-ups, notes, and CRM insights from one modern and responsive workspace.
 
 <p>
+
+<a href="https://mini-crm-system.onrender.com" target="_blank">
+<img src="https://img.shields.io/badge/🚀 Live Demo-Visit Website-success?style=for-the-badge">
+</a>
 
 <a href="https://github.com/khushi443/Mini-CRM-System">
 <img src="https://img.shields.io/badge/💻 GitHub-Repository-black?style=for-the-badge&logo=github">
@@ -32,11 +36,11 @@ Manage leads, tasks, follow-ups, notes, and sales activities with a modern, resp
 
 # 📖 Overview
 
-**Mini CRM System** is a modern full-stack Customer Relationship Management application designed to help users manage leads, tasks, follow-ups, notes, and sales activities from a single workspace.
+**Mini CRM System** is a modern full-stack Customer Relationship Management application designed to help users manage leads, sales pipelines, tasks, follow-ups, notes, and customer activities from a single workspace.
 
 The application combines a responsive dark glassmorphism frontend with a **NestJS REST API**, **Prisma ORM**, and **PostgreSQL** database.
 
-It includes secure authentication, user-specific data access, lead pipeline management, task tracking, follow-up scheduling, Kanban workflow, dashboard insights, and an AI Insights feature based on actual CRM data.
+The platform provides secure authentication, user-specific CRM data, lead pipeline management, Kanban workflow, task tracking, follow-up scheduling, dashboard analytics, and data-driven CRM insights.
 
 ---
 
@@ -49,38 +53,51 @@ It includes secure authentication, user-specific data access, lead pipeline mana
 - JWT Authentication
 - Password Hashing with bcrypt
 - Protected Routes
-- User Profile
-- Logout
+- User-specific Data Access
 - Authentication State Management
+- Logout
 - Form Validation
-- Password Strength Validation
-- Loading States & Toast Notifications
+- Password Validation
+- Loading & Error States
 
 ---
 
 ### 👥 Lead Management
 
-- Create Leads
+- Add New Leads
 - View Leads
 - Edit Leads
 - Delete Leads
 - Lead Status Management
 - Lead Details
-- User-specific Lead Access
-- Persistent PostgreSQL Data
-- Lead Pipeline Management
+- User-specific Leads
+- Persistent Database Storage
+- Sales Pipeline Management
 
 ---
 
 ### 📊 Dashboard
 
-- Total Leads Overview
-- Lead Status Statistics
-- Task Statistics
-- Follow-up Statistics
-- CRM Pipeline Overview
-- Real Database Data
-- Interactive Dashboard Cards
+- Total Leads
+- New Leads
+- Qualified Leads
+- Win Rate
+- Pending Tasks
+- Upcoming Follow-ups
+- Leads by Pipeline Stage
+- Leads Created Over Time
+- Real Database Statistics
+
+---
+
+### 🗂️ Kanban Pipeline
+
+- Visual Sales Pipeline
+- Status-based Lead Columns
+- Drag & Drop Lead Management
+- Lead Status Updates
+- Persistent Status Changes
+- Easy Sales Workflow
 
 ---
 
@@ -91,10 +108,11 @@ It includes secure authentication, user-specific data access, lead pipeline mana
 - Delete Tasks
 - Task Due Dates
 - Pending Tasks
+- In Progress Tasks
 - Completed Tasks
+- Overdue Tasks
 - Task Status Management
 - Persistent Task Data
-- ISO 8601 Date Validation
 
 ---
 
@@ -107,61 +125,50 @@ It includes secure authentication, user-specific data access, lead pipeline mana
 - Overdue Follow-ups
 - Completed Follow-ups
 - Follow-up Status Tracking
-- User-specific Follow-up Access
+- User-specific Follow-ups
 
 ---
 
-### 📝 Notes
+### 📝 Lead Notes
 
 - Add Notes to Leads
 - View Lead Notes
 - Manage Lead Activities
 - Protected Notes API
 - User Ownership Validation
+- Persistent Note Storage
 
 ---
 
-### 🗂️ Kanban Board
+### 🤖 CRM Insights
 
-- Visual Lead Pipeline
-- Status-based Lead Columns
-- Drag & Drop Workflow
-- Lead Status Updates
-- Persistent Status Changes
-- Easy Sales Pipeline Management
-
----
-
-### 🤖 AI Insights
-
-- CRM Pipeline Summary
+- Pipeline Summary
 - Lead Statistics
 - Task Insights
 - Follow-up Insights
-- Priority-based CRM Suggestions
-- Real-time Data Analysis
-- Authenticated AI Insights Endpoint
-- No External AI API Key Required
+- Priority-based Suggestions
+- CRM Activity Analysis
+- Real-time CRM Data Analysis
 
-> AI Insights are generated from actual CRM data. The system avoids inventing information that is not available in the database.
+> CRM Insights are generated from the application's own CRM data and do not require an external AI API key.
 
 ---
 
 ### 🎨 Modern UI/UX
 
 - Dark Glassmorphism Design
-- Responsive Layout
 - Modern Dashboard
-- Animated UI Elements
 - Gradient Accents
 - Glass Cards
-- Modal Dialogs
+- Responsive Navigation
+- Animated UI Elements
+- Interactive Modals
 - Toast Notifications
 - Loading States
 - Empty States
 - Error States
-- Dark Native Dropdowns
-- Responsive Navigation
+- Responsive Forms
+- Modern Native Dropdowns
 
 ---
 
@@ -170,9 +177,9 @@ It includes secure authentication, user-specific data access, lead pipeline mana
 - Desktop Friendly
 - Tablet Friendly
 - Mobile Responsive
+- Responsive Navigation
 - Responsive Modals
-- Adaptive Navigation
-- Flexible Dashboard Layout
+- Adaptive Layouts
 
 ---
 
@@ -188,8 +195,8 @@ It includes secure authentication, user-specific data access, lead pipeline mana
 | Authentication | JWT + bcrypt |
 | Validation | class-validator |
 | Styling | Custom CSS + Glassmorphism |
-| Development | VS Code |
 | Version Control | Git & GitHub |
+| Deployment | Render |
 
 ---
 
@@ -197,6 +204,16 @@ It includes secure authentication, user-specific data access, lead pipeline mana
 
 ```text
 Mini-CRM-System
+│
+├── assets
+│   └── screenshots
+│       ├── 1.png
+│       ├── 2.png
+│       ├── 3.png
+│       ├── 4.png
+│       ├── 5.png
+│       ├── 6.png
+│       └── 7.png
 │
 ├── backend
 │   │
