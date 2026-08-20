@@ -339,7 +339,7 @@ https://khushi443.github.io/khushi-portfolio/
 
 💼 LinkedIn
 
-https://www.linkedin.com/in/khushisingh-bca/
+https://www.linkedin.com/in/khushiiisingh/
 
 💻 GitHub
 
